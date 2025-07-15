@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>xunfei</artifactId>
-    <version>0.0.3</version>
+    <artifactId>backstageproxy</artifactId>
+    <version>0.0.4</version>
     <name>xunfei</name>
     <description>xunfei</description>
     <url/>
@@ -146,7 +146,7 @@
                     <useColor>true</useColor>
                     <images>
                         <image>
-                            <name>xunfei/${project.artifactId}:${project.version}</name>
+                            <name>proxy/${project.artifactId}:${project.version}</name>
                             <build>
                                 <contextDir>${project.basedir}</contextDir>
                                 <assembly>
