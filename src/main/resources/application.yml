@@ -1,2 +1,7 @@
 server:
   port: 18829
+
+# 代理服务配置
+agent:
+  api:
+    key: ${AGENT_API_KEY:app-HaZN1gDhgR5864hkWejoLcd7}  # 可以通过环境变量设置
