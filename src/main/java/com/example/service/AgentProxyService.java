@@ -92,8 +92,7 @@ public class AgentProxyService {
         requestMap.put("conversation_id", "");
         requestMap.put("user", "admin");
 
-        // 构建inputs数组
-        List<Map<String, Object>> inputs = new ArrayList<>();
+        // 构建inputs
         Map<String, Object> inputData = new HashMap<>();
 
         // 映射请求字段到inputs，处理可能为null的情况
@@ -114,8 +113,7 @@ public class AgentProxyService {
         addToInputIfNotEmpty(inputData, "user_no", request.getUserNo());
         addToInputIfNotEmpty(inputData, "user_query", request.getUserQuery());
 
-        inputs.add(inputData);
-        requestMap.put("inputs", inputs);
+        requestMap.put("inputs", inputData);
 
         String jsonBody = JSON.toJSONString(requestMap);
         logger.debug("构建的请求体: {}", jsonBody);
