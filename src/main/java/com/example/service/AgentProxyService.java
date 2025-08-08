@@ -52,7 +52,7 @@ public class AgentProxyService {
     /**
      * 发送阻塞模式请求
      */
-    public String sendRequest(AgentProxyRequest request) throws IOException {
+    public JSONObject sendRequest(AgentProxyRequest request) throws IOException {
         String requestBody = buildRequestBody(request);
 
         Request httpRequest = new Request.Builder()
@@ -72,7 +72,7 @@ public class AgentProxyService {
 
             // 解析响应并提取answer字段
             JSONObject jsonResponse = JSON.parseObject(responseBody);
-            return jsonResponse.getString("answer");
+            return jsonResponse;
         }
     }
 

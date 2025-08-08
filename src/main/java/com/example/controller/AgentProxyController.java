@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.example.entity.AgentProxyRequest;
 import com.example.service.AgentProxyService;
 import org.slf4j.Logger;
@@ -25,7 +26,7 @@ public class AgentProxyController {
     private AgentProxyService agentProxyService;
 
     @PostMapping("/agentProxy")
-    public String agentProxy(@RequestBody AgentProxyRequest request) {
+    public JSONObject agentProxy(@RequestBody AgentProxyRequest request) {
         try {
             logger.info("接收到代理请求，callId: {}, query: {}",
                     request.getCallId(), request.getUserQuery());
@@ -34,7 +35,7 @@ public class AgentProxyController {
 
         } catch (Exception e) {
             logger.error("代理请求处理失败", e);
-            return "请求处理失败: " + e.getMessage();
+            return new JSONObject(Integer.parseInt("请求处理失败: " + e.getMessage()));
         }
     }
 }
