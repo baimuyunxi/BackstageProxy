@@ -1,7 +1,26 @@
 server:
   port: 18829
+  # Tomcat 配置
+  tomcat:
+    # 连接超时时间（毫秒）
+    connection-timeout: 300000  # 5分钟
+    # 最大连接数
+    max-connections: 8192
+    threads:
+      # 最大工作线程数
+      max: 200
+      # 最小工作线程数
+      min-spare: 10
 
 # 代理服务配置
 agent:
   api:
-    key: ${AGENT_API_KEY:app-HaZN1gDhgR5864hkWejoLcd7}  # 可以通过环境变量设置
+    key: ${AGENT_API_KEY:app-zZgEqozINDkKnk5QuVDiwXuV}  # 可以通过环境变量设置
+
+spring:
+  # MVC 配置
+  mvc:
+    async:
+      # 异步请求超时时间（毫秒）
+      request-timeout: 300000  # 5分钟
+
